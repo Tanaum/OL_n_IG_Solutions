@@ -1,4 +1,7 @@
+#IG Paper 23/May/June/2023
+
 #IA someday i'll use oop for it
+#i have used a dictionary instead of a 2d list since i couldn't understand how to add new items to a 2d list
 
 Contacts = {}
     
