@@ -1,4 +1,4 @@
-#Tanaum Masooma, O3-B
+#OL Specimen Paper 2A
 
 StudentName = ['Kate', 'Catherine', 'Aliha', 'Umaima', 'Anaya', 'Momin']
 StudentMark = [
@@ -54,5 +54,3 @@ print('Distinctions:',distinctionNo)
 print('Merits:',meritNo)
 print('Passes',passNo)
 print('Fails:',failNo)
-
-#Tanaum Masooma, O3-B
