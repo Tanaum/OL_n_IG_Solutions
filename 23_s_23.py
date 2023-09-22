@@ -1,9 +1,6 @@
 #IG Paper 23/May/June/2023
 
-#IA someday i'll use oop for it
-#i have used a dictionary instead of a 2d list since i couldn't understand how to add new items to a 2d list
-
-Contacts = {}
+Contacts = []
     
 CurrentSize = 0 
 
@@ -19,9 +16,9 @@ def main():
         if valid(choice):
             choice = int(choice)
             if choice==1:
-                print(add())
+                add()
             elif choice==2:
-                print(display())
+                display()
             elif choice==3:
                 delete()
             elif choice == 4:
@@ -58,7 +55,7 @@ def add():
             for contact in range(num_of_contacts):
                 name = input('Enter full name (last name, first name): ')
                 number = input('Enter telephone number: ')
-                Contacts[name]=number
+                Contacts.append([name,number])
                 CurrentSize+=1
         else:
             print(f'Too many contacts. You can only enter {max_contacts-CurrentSize} more contacts.')
@@ -66,8 +63,14 @@ def add():
         print('Please enter a valid option')
 
 def display():
-    return dict(sorted(Contacts.items()))
+    global CurrentSize
 
+    if CurrentSize>=2:
+        for row in range(CurrentSize):
+            print(f'Name: {Contacts[row][0]}\nTelephone Number: {Contacts[row][1]}')
+    else:
+        print('Too few contacts.')
+        
 def delete():
     Contacts.clear()
 
