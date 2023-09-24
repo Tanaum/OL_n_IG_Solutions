@@ -16,11 +16,13 @@ def main():
         if valid(choice):
             choice = int(choice)
             if choice==1:
-                add()
+                add(Contacts)
+                bubble_sort(Contacts)
             elif choice==2:
-                display()
+                display(Contacts)
+                print(Contacts)
             elif choice==3:
-                delete()
+                delete(Contacts)
             elif choice == 4:
                 'Bye!'
                 exit()
@@ -35,19 +37,22 @@ def menu():
 4: Exit
 ''')
     
+#validates choice
 def valid(choice):
     if choice in ['1','2','3','4']:
         return True 
     else:
         return False 
-        
+
+#validates the number of contacts 
 def validation(n):
     if n<=5 and n>=1: 
         return True
     else:
         return False
-    
-def add():
+
+#adds new contacts
+def add(list):
     global CurrentSize
     num_of_contacts = int(input('Enter contacts (1-5): '))
     if validation(num_of_contacts):
@@ -62,17 +67,41 @@ def add():
     else:
         print('Please enter a valid option')
 
-def display():
+#sorts the contacts using bubble sort
+def bubble_sort(list):
+    global CurrentSize
+
+    if CurrentSize>=2:
+        upper = len(list)
+        lower = 0
+        swap = True
+        while swap == True and upper>lower:
+            swap=False
+            for row in range(upper-1):
+                if list[row][0]>list[row+1][0]:
+                    temporary = list[row][0]
+                    list[row][0]=list[row+1][0]
+                    list[row+1][0]=temporary
+                    temporary2 = list[row][1]
+                    list[row][1]=list[row+1][1]
+                    list[row+1][1]=temporary2
+                    swap=True
+                upper-=1
+        return list
+
+#displays all of the contacts
+def display(list):
     global CurrentSize
 
     if CurrentSize>=2:
         for row in range(CurrentSize):
-            print(f'Name: {Contacts[row][0]}\nTelephone Number: {Contacts[row][1]}')
+            print(f'Name: {list[row][0]}\nTelephone Number: {list[row][1]}')
     else:
         print('Too few contacts.')
-        
-def delete():
-    Contacts.clear()
+
+#deletes all of the contacts       
+def delete(list):
+    list.clear()
 
 if __name__ == '__main__':
     main()
