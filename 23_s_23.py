@@ -20,7 +20,6 @@ def main():
                 bubble_sort(Contacts)
             elif choice==2:
                 display(Contacts)
-                print(Contacts)
             elif choice==3:
                 delete(Contacts)
             elif choice == 4:
@@ -86,7 +85,6 @@ def bubble_sort(list):
                     list[row][1]=list[row+1][1]
                     list[row+1][1]=temporary2
                     swap=True
-                upper-=1
         return list
 
 #displays all of the contacts
