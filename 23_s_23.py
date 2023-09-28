@@ -23,7 +23,7 @@ def main():
             elif choice==3:
                 delete(Contacts)
             elif choice == 4:
-                'Bye!'
+                print('Bye!')
                 exit()
         else:
             print('Invalid option. Choose a valid option')
