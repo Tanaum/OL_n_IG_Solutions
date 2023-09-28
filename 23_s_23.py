@@ -99,7 +99,9 @@ def display(list):
 
 #deletes all of the contacts       
 def delete(list):
+    global CurrentSize
     list.clear()
+    CurrentSize = 0
 
 if __name__ == '__main__':
     main()
