@@ -23,9 +23,20 @@ def hospital(id):
 			print('Warning. Temperature.')
 		else:
 			print('Severe Warning.')
+<<<<<<< HEAD
 	else:
 		print('Invalid hospital number.')
 
 #test
 hospital_number = int(input('Enter hospital number: ').strip())
 hospital(hospital_number)
+=======
+		exit()
+	else:
+		print('Invalid hospital number.')
+		exit()
+
+#test
+hospital_number = int(input('Enter hospital number: ').strip())
+hospital(hospital_number)
+>>>>>>> 358a4eb3158ddfbab00a8f529b578456c52f188f
