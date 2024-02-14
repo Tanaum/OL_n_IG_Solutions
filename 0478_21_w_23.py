@@ -1,6 +1,6 @@
 Evening  =[[False, True]*20]*10 #Right now all of the seats are available
 
-#Coutns booked seats
+#Counts booked seats
 Booked = 0
 for i in range(10):
     for j in range(20):
@@ -26,7 +26,10 @@ if Available<NumberSeats: #If user wants more seats than available
     else:
         print(Available,"seats available")
 else:
-    for Seat in range(int(NumberSeats)):
-        Evening[(Booked+Seat)%20][(Booked+Seat)//20] = True
-        print('Row:',(Booked+Seat)%20)
-        print("Seat:",(Booked+Seat)//20)
+    counter = 0
+    for row in range(20):
+        for seat in range(10):
+            if NumberSeats>counter and Evening[row][seat] == False:
+                Evening[row][seat] = True
+                print(f'Row: {row}, Seat: {seat}')
+                counter +=1
